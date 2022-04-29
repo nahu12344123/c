@@ -1,0 +1,1201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="./script.js"></script>
+    <script src="https://kit.fontawesome.com/4dd4548a89.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+    <style>
+        .active {
+            color: pink;
+        }
+    </style>
+
+    <!-- <h1>JavaScript DOM Basic</h1> -->
+
+    <!-- <i class="fa-solid fa-thumbs-up" onclick="myFunction(this)" style="font-size: 50px;"></i> -->
+
+    <script>
+        // console.log(document)
+        // console.log(document.body)
+
+        // children HTML element
+        // console.log(document.body.children)
+
+        // childNodes HTML element + text(줄바꿈), comment(주석)
+        // console.log(document.body.childNodes)
+
+        // console.log(document.getElementById('list'))
+        // console.log(document.getElementsByClassName('liem'))
+
+        // console.log(document.querySelector('h1'))
+        // console.log(document.querySelector('#list'))
+
+        // console.log(document.querySelectorAll('.item'))
+        // console.log(document.querySelectorAll('li'))
+
+
+        // nextElementSibling DOM tree에서 같은 level에 있는 다음 element
+        // console.log(document.querySelector('h1').nextElementSibling)
+
+        // console.log(document.getElementById('list').children)
+        // console.log(document.getElementById('list').children[0])
+        // console.log(document.getElementById('list').children.length)
+        // console.log(document.getElementById('list').childNodes)
+        // console.log(document.getElementById('list').childNodes.length)
+
+        // // NodeList의 first
+        // console.log(document.getElementById('list').firstChild)
+        // // HTMLCollection의 first
+        // console.log(document.getElementById('list').firstElementChild)
+
+        // console.log(document.getElementsByClassName('item'))
+
+        // console.log(document.querySelector('.item'))
+
+        // console.log(document.getElementsByClassName('my-list'))
+
+        // console.log(document.getElementsByClassName('my-list')[0])
+
+        // console.log(document.querySelector('.my-list'))
+
+
+        // Attribute (속성 조작)
+
+        // style 속성 조작
+        // console.log(document.querySelector('h1').style)
+
+        // document.querySelector('h1').style.color = '#fff';
+        // document.querySelector('h1').style.backgroundColor = '#000';
+
+        // var ul = document.querySelector('ul')
+
+        // console.log(ul)
+
+        // console.log(ul.id)
+        // console.log(ul.className)
+
+        // // gatAttribute (name) name 속성을 가져온다
+        // console.log(ul.getAttribute('id'))
+        // console.log(ul.getAttribute('class'))
+
+        // // setAttribute(name, value) name속성을 value값으로 만든다
+        // document.querySelector('h1').setAttribute('class', 'title')
+
+        // // ul.children[0].classList.add('active')
+        
+        // // ul.children[0].classList.remove('active')
+        
+        // ul.children[0].classList.toggle('active')
+
+        // # Print to  HTML
+
+        // createElement(name) name의 element를 만듣다
+        // var p = document.createElement('p');
+        // p.textContent = '2022 현대자동차'
+
+        // innerHTML: text와 html tag 모두 사용 가능하다
+        // p.innerHTML = '<small>2022 현대자동차</small>'
+        // appendChild(element) element를 가장 마지막에 추가한다
+        // document.body.appendChild(p)
+
+
+        // var h1 = document.createElement('h1');
+        // h1.textContent = '2022 현대자동차'
+        // document.body.appendChild(h1)
+
+        // // var ul = document.createElement('ul')
+        // // ul.innerHTML =
+        // // '<li>제네시스</li><li>스타리아</li><li>아이오닉</li><li>캐스퍼</li>'
+        // // document.body.appendChild(ul)
+
+        // var ul = document.createElement('ul');
+
+        // var cars = ["제네시스", "스타리아", "아이오닉", "캐스퍼"]
+
+        // for (i=0; i<cars.length; i++) {
+        //     var li = document.createElement('li');
+        //     li.textContent = cars[i];
+        //     ul.appendChild(li)
+        // }
+
+        // document.body.appendChild(ul);
+
+
+
+        // Event
+        // 사용자의 모든 행동
+        // addEventListener(event, callback)
+        // event 발생 시에 callback 실행
+
+        // addEventListener('load', function () {
+        //     alert('welcome')
+        // })
+
+        // addEventListener('resize', function() {
+            // console.log('resized...')
+
+            // console.log(window.innerWidth)
+            // console.log(window.innerHeight)
+
+            // console.log(window.outerWidth)
+            // console.log(window.outerHeight)
+
+            // console.log(window.screenTop)
+        // })
+
+            // var btn = document.querySelector('button');
+
+            // btn.addEventListener('click', function(e) {
+            //     // event
+            //     console.log(e)
+            //     // event target
+            //     console.log(e.target)
+            // })
+
+
+            // function myFunction(el) {
+            //    console.log(el.style.backgroundColor)
+
+            //    if (el.style.color === '') {
+            //     el.style.color = 'pink'
+            //    } else {
+            //        el.style.color = ''
+            //    }
+
+
+            // el.classList.toggle('active')
+
+
+            // }
+
+
+
+    </script>
+
+    <!-- <h1>Rendering in HTML</h1> -->
+
+    <script>
+
+        // var cars = ["제네시스", "스타리아", "캐스퍼"]
+
+        // ul element를 만든다
+        // var ul = document.createElement('ul')
+
+        // li를 만든 뒤 ul에 붙힌다
+        // for (i=0; i<cars.length; i++) {
+        //     var li = document.createElement('li');
+        //     li.innerHTML = cars[i];
+        //     ul.appendChild(li)
+        // }
+
+        // 또 다른 방법
+        // for (car of cars) { // for (value of array)
+        //         var li = document.createElement('li');
+        //         li.innerHTML = car;
+        //         ul.appendChild(li)
+        // }
+
+        // 또 다른 방법
+        // cars.forEach(function (car) { // function (value, index, array)
+        //         var li = document.createElement('li');
+        //         li.innerHTML = car;
+        //         ul.appendChild(li)
+        // })
+
+        // 완성된 ul을 body에 append(추가)
+        // document.body.appendChild(ul);
+
+
+        // Q. rendering in HTML
+        // template literal을 사용
+            // var cars = [
+            //     { name: '제네시스', design: 10 , cost: 10 },
+            //     { name: '스타리아', design: 9 , cost: 9 },
+            //     { name: '아이오닉', design: 10 , cost: 9 },
+            //     { name: '캐스퍼', design: 8 , cost: 8 },
+            // ]
+
+            // var ul = document.createElement('ul');
+
+            // for (car of cars) {
+            //     var li = document.createElement('li');
+            //     // template literal ``, 변수는 ${}에 담아 출력
+            //     // 줄바꿈 가능
+            //     li.innerHTML = `
+            //     이름:${car.name}, 
+            //     디자인:${car.design}점, 
+            //     가격:${car.cost}
+            //     `;
+
+            //     ul.appendChild(li)
+            // }
+
+            // document.body.appendChild(ul);
+
+
+    </script>
+
+    <!-- <h1>현대자동차 비교표</h1>
+    <table>
+        <tr>
+            <th>이름</th>
+            <th>디자인</th>
+            <th>가격</th>
+        </tr>
+    </table>
+
+    <script>
+        var cars = [
+            { name: '제네시스', design: 10 , cost: 10 },
+            { name: '스타리아', design: 9 , cost: 9 },
+            { name: '아이오닉', design: 10 , cost: 9 },
+            { name: '캐스퍼', design: 8 , cost: 8 },
+        ]
+
+        var table = document.querySelector('table');
+
+        for (car of cars) {
+            var tr = document.createElement('tr');
+
+            tr.innerHTML = `
+            <td>${car.name}</td>
+            <td>${car.design}점</td>
+            <td>$${car.cost}</td>
+            `
+
+            table.appendChild(tr)
+        }
+
+    </script> -->
+
+    <!-- <style>
+        .fa-star {
+            font-size: 25px;
+            cursor: pointer;
+        }
+        .active {
+            color: gold;
+        }
+    </style>
+
+    <h1>리뷰를 남겨주세요</h1>
+
+    <i class="fa-solid fa-star" onclick="toggleStar(1)"></i>
+    <i class="fa-solid fa-star" onclick="toggleStar(2)"></i>
+    <i class="fa-solid fa-star" onclick="toggleStar(3)"></i>
+    <i class="fa-solid fa-star" onclick="toggleStar(4)"></i>
+    <i class="fa-solid fa-star" onclick="toggleStar(5)"></i>
+
+    <script>
+        // NodeList(5)
+        var stars = document.querySelectorAll('.fa-star')
+
+        console.log(stars);
+
+        function toggleStar(data) {
+
+            // 초기화
+            // active를 모두 지운다
+            for (star of stars) {
+                star.classList.remove('active')
+            }
+
+            for (i=0; i<data; i++) {
+                stars[i].classList.add('active')
+            }
+
+        } -->
+
+        <!-- <style>
+            #loader {
+                border: 16px solid #3498db;
+                border-radius: 50%;
+                border-top: 16px solid #fff;
+                width: 120px;
+                height: 120px;
+                animation: spin 2s linear infinite;
+            }
+
+            @keyframes spin {
+                0% { transform: rotate(0deg); }
+                100% { transform: rotate(360deg); }
+            }
+        </style>
+
+        <h1 id="message"></h1>
+        <div id="loader"></div>
+
+        <script>
+            // setTimeout(callback, seconds) seconds 후에 callback 실행
+            setTimeout(function () {
+                // console.log('hello')
+                document.querySelector('#message').innerHTML = 'Hello'
+                document.getElementById('loader').style.display = 'none';
+            }, 3000) // 1000 millisecond = second
+        </script>
+
+    </script> -->
+
+    <!-- <style>
+        .acc-btn {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+        }
+        .panel {
+            /* border: 1px dashed; */
+            display: none;
+        }
+    </style>
+
+    <button class="acc-btn">제네시스</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, eum illo quia, libero placeat quas porro perspiciatis deleniti, quae maiores sapiente corporis? Reiciendis quisquam tempore ea possimus, soluta iusto consequuntur.</p>
+    </div>
+
+    <button class="acc-btn">스타리아</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, eum illo quia, libero placeat quas porro perspiciatis deleniti, quae maiores sapiente corporis? Reiciendis quisquam tempore ea possimus, soluta iusto consequuntur.</p>
+    </div>
+
+    <button class="acc-btn">캐스퍼</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium, eum illo quia, libero placeat quas porro perspiciatis deleniti, quae maiores sapiente corporis? Reiciendis quisquam tempore ea possimus, soluta iusto consequuntur.</p>
+    </div>
+
+    <script>
+        var accBtns = document.getElementsByClassName('acc-btn')
+
+        for (accBtn of accBtns) {
+            // addEventListener(event, callback): event 발생 시에 callback 실행
+            accBtn.addEventListener('click', function (e) {
+                console.log(e.target)
+
+                // element.nextElementSibling: elemen의 DOM tree의 같은 level의 다음 element
+                var panel = e.target.nextElementSibling
+
+                // panel.style.display = 'block';
+
+                // CSS로부터 속성을 가져올 수 없다
+                console.log('display: ', panel.style.display)
+
+                if (panel.style.display === 'block') {
+                    panel.style.display = 'none'
+                } else { // ''(처음 load되었을 때) or none
+                    panel.style.display = 'block'
+                }
+            })
+        }
+    </script> -->
+
+    <!-- <style>
+        p {
+            border: 2px dashed;
+            height: 0;
+        }
+    </style>
+
+    <p>
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nesciunt blanditiis cumque numquam illum exercitationem, at maxime. Dicta, eos laudantium? Quis dicta incidunt ad molestias? Sint eligendi optio alias quas.
+    </p>
+
+    <script>
+        var p = document.querySelector('p');
+
+        // CSS를 가져올 수 없다
+        console.log(p.style.Height)
+        // padding을 포함
+        console.log(p.clientHeight)
+        // padding, border를 포함
+        console.log(p.offsotHeight)
+        // padding을 포함
+        console.log(p.scrollHeight)
+    </script> -->
+
+    <!-- <style>
+        .btn {
+            width: 100%;
+            padding: 10px;
+            text-align: left;
+            cursor: pointer;
+
+        }
+        .panel {
+            border: 1px solid red;
+            height: 0;
+            overflow: hidden;
+            transition:  .5s;
+        }
+    </style>
+
+    <button class="btn">제네시스</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officia nisi, nihil quasi aliquam, provident, at sint iusto laboriosam enim perferendis eius deleniti voluptatem sed ipsam voluptas architecto veritatis? Voluptates?</p>
+    </div>
+
+    <button class="btn">스타리아</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officia nisi, nihil quasi aliquam, provident, at sint iusto laboriosam enim perferendis eius deleniti voluptatem sed ipsam voluptas architecto veritatis? Voluptates?</p>
+    </div>
+
+    <button class="btn">캐스퍼</button>
+    <div class="panel">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Deserunt officia nisi, nihil quasi aliquam, provident, at sint iusto laboriosam enim perferendis eius deleniti voluptatem sed ipsam voluptas architecto veritatis? Voluptates?</p>
+    </div>
+
+    <script>
+        // NodeList
+        var btn = document.querySelectorAll('.btn')
+
+        // Array
+        var cars = ['제네시스', '스타리아', '캐스퍼']
+
+
+        car.forEach(function (car) {
+            console.log(car)
+        })
+
+
+
+            // for (btn of btn) {
+            //     btn.addEventListener('click', function (e) {
+            //         console.log(e.target)
+            //         var panel = e.target.nextElementSibling;
+                    
+            //         console.log (panel.style.height);
+                    
+            //         if (panel.style.height === '') {
+            //             panel.style.height = panel.scrollHeight + 'px';
+            //         } else {
+            //             panel.style.height = '';
+            //         }
+            //     })
+            // }
+
+        console.log(btn)
+    </script> -->
+
+<!-- <style>
+    .btn {
+        padding: 15px;
+        display: inline-block;
+    }
+    .btn-group {
+        box-sizing: border-box;
+        border: 1px solid #bbb;
+        width: 100%;
+        background-color: gainsboro;
+        cursor: pointer;
+    }
+    .tab-content {
+        box-sizing: border-box;
+        border: 1px solid #bbb;
+        padding: 10px;
+    }
+    .btn:hover {
+        background-color: #bbb;
+    }
+</style>
+
+<div class="container">
+    <div class="btn-group">
+        <samp class="btn" onclick="toggleTab('london')">london</samp>
+        <samp class="btn" onclick="toggleTab('seoul')">seoul</samp>
+        <samp class="btn" onclick="toggleTab('tokyo')">tokyo</samp>
+    </div>
+    
+    <div class="content">
+        <div id="london" class="tab-content">
+            <h3>london</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    
+        <div id="seoul" class="tab-content">
+            <h3>seoul</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    
+        <div id="tokyo" class="tab-content">
+            <h3>tokyo</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // HTMLCollection(3)
+    var tabContents = document.getElementsByClassName('tab-content');
+
+    console.log(tabContents)
+
+    function toggleTab(city) {
+        console.log(city)
+
+        // 초기화. contents를 모두 안보이게 한다.
+        for (tabContent of tabContents) {
+            tabContent.style.display = 'none'
+        }
+
+        document.getElementById(city).style.display = 'block'
+    }
+
+    // 처음 load되었을 떄 실행
+    toggleTab('london')
+</script> -->
+
+<!-- <h1>HTML data-name attribute</h1> -->
+
+<!-- data-name 속성을 사용해서 원하는 데이터를 저장할 수 있다 -->
+<!-- <h1 id="title" data-title="my-title">Title</h1> -->
+
+<!-- <script>
+    var h1 = document.getElementById('title')
+    // getAttribute(atgtribute)
+    console.log(h1.getAttribute('data-title'))
+</script> -->
+
+<!-- <style>
+.btn {
+    padding: 15px;
+    display: inline-block;
+}
+.btn-group {
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    width: 100%;
+    background-color: gainsboro;
+    cursor: pointer;
+}
+.tab-content {
+    box-sizing: border-box;
+    border: 1px solid #bbb;
+    padding: 10px;
+    display: none;
+}
+.btn:hover {
+    background-color: #bbb;
+}
+.active {
+    display: block;
+}
+</style>
+
+<div class="container">
+    <div class="btn-group">
+        <samp class="btn" data-city="london">london</samp>
+        <samp class="btn" data-city="seoul">seoul</samp>
+        <samp class="btn" data-city="tokyo">tokyo</samp>
+    </div>
+    
+    <div class="content">
+        <div id="london" class="tab-content active">
+            <h3>london</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    
+        <div id="seoul" class="tab-content">
+            <h3>seoul</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    
+        <div id="tokyo" class="tab-content">
+            <h3>tokyo</h3>
+            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit.</p>
+        </div>
+    </div>
+</div>
+
+<script>
+    // NodeList(3)
+    var btns = document.querySelectorAll('.btn');
+    var tabContents = document.querySelectorAll('.tab-content');
+    
+    btns.forEach(function (btn) {
+        btn.addEventListener('click', function (e) {
+            var id = e.target.getAttribute('data-city');
+
+
+            // active 모두 제거(초기화)
+            tabContents.forEach(function (tabContent) {
+                tabContent.classList.remove('active')
+            })
+
+            //id값을 가진 element만 active 추가
+            document.getElementById(id).classList.add('active');
+        })
+    })
+
+    console.log(btns)
+</script> -->
+
+
+<!-- <style>
+    .dropdown {
+        border: 3px dashed;
+        display: inline-block;
+        position: relative;
+    }
+    .dropdown-content {
+        border: 1px solid red;
+        width: 200px;
+        position: absolute;
+        top: 35px;
+        display: none;
+    }
+    .dropdown-content a {
+        display: block;
+    }
+    .active {
+        display: block;
+    }
+</style>
+
+<div class="dropdown">
+    <button class="drop-btn">메뉴</button>
+    <div class="dropdown-content">
+        <a href="">제세시스</a>
+        <a href="">스타리아</a>
+        <a href="">캐스퍼</a>
+    </div>
+</div>
+
+<script>
+    var dropBtn = document.querySelector('.drop-btn');
+    var dropdownContent = document.querySelector('.dropdown-content');
+    dropBtn.addEventListener('click', function () {
+        dropdownContent.classList.toggle('active')
+    })
+</script> -->
+
+<!-- <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    header {
+        border: 3px dashed;
+    }
+    .header-inner {
+        background-color: #ddd;
+        padding: 5px;
+    }
+    nav {
+        display: none;
+        border: 1px solid red;
+    }
+    nav a {
+        display: block;
+        padding: 5px;
+        text-align: center;
+        border: 1px dashed;
+    }
+    .menu-btn {
+        padding: 0 10px;
+        cursor: pointer;
+    }
+    .active {
+        display: block;
+    }
+</style>
+
+<header>
+    <div class="header-inner">
+        <h2><span class="menu-btn">#</span> Company</h2>
+    </div>
+    <nav class="content">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Blog</a>
+    </nav>
+</header>
+
+<script>
+    var nav = document.querySelector('nav')
+    var menuBtn = document.querySelector('.menu-btn')
+
+    menuBtn.addEventListener('click', function() {
+        nav.classList.toggle('active')
+    })
+</script> -->
+
+<!-- <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    header {
+        border: 3px dashed;
+    }
+    .header-inner {
+        background-color: #ddd;
+        padding: 5px;
+    }
+    nav {
+        border: 1px solid red;
+        height: 0;
+        overflow: hidden;
+        transition: .5s;
+    }
+    nav a {
+        display: block;
+        padding: 5px;
+        text-align: center;
+        border: 1px dashed;
+    }
+    .menu-btn {
+        padding: 0 10px;
+        cursor: pointer;
+    }
+</style>
+
+<header>
+    <div class="header-inner">
+        <h2><span class="menu-btn">#</span> Company</h2>
+    </div>
+    <nav class="content">
+        <a href="">Home</a>
+        <a href="">About</a>
+        <a href="">Blog</a>
+    </nav>
+</header>
+
+<script>
+    var nav = document.querySelector('nav')
+    var menuBtn = document.querySelector('.menu-btn')
+
+    menuBtn.addEventListener('click', function() {
+        // CSS를 가져올 수 없음
+        console.log(nav.style.height)
+
+        if (nav.style.height === '') {
+            nav.style.height = nav.scrollHeight + 'px';
+        } else {
+            nav.style.height = '';
+        }
+    })
+</script> -->
+
+<!-- <style>
+    nav {
+        border: 1px dashed;
+        width: 280px;
+        height: 100%;
+        /* viewport(디바이스 크기) 기준 */
+        position: fixed;
+        top: 0;
+        /* nav의 넓이만큼 왼쪽으로 이동 */
+        left: -280px;
+        transition: 0.5s;
+        background-color: #ddd;
+    }
+    nav a {
+        display: block;
+    }
+    .layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+    }
+</style>
+
+<div id="layer" class="layer"></div>
+
+<nav>
+    <a href="">Home</a>
+    <a href="">About</a>
+    <a href="">Blog</a>
+    <span id="closeMenu">close</span>
+</nav>
+<span id="openMenu">MENU</span>
+
+<script>
+    var openMenu = document.getElementById('openMenu');
+    var closeMenu = document.getElementById('closeMenu');
+    var nav = document.querySelector('nav');
+    var layer = document.getElementById('layer')
+
+    // 메뉴 열기 버튼을 클릭했을 때
+    openMenu.addEventListener('click', function() {
+        nav.style.left = '0px'
+        layer.style.display = 'block'
+    })
+
+    // 메뉴  닫기 버튼을 클릭했을 때
+    closeMenu.addEventListener('click', function () {
+        nav.style.left = '-280px'
+        layer.style.display = 'none'
+    })
+
+    // layer를 클릭했을 때
+    layer.addEventListener('click', function () {
+        nav.style.left = '-280px'
+        layer.style.display = 'none'
+    })
+    
+</script> -->
+
+
+<!-- <style>
+    .title {
+        display: block;
+    }
+    /* 더 밑에 있는 CSS 속성의 영향을 받는다 */
+    .active {
+        display: none;
+    }
+</style>
+
+<h1 class="title active">현대 자동차</h1> -->
+
+<!-- <style>
+    img {
+        width: 100%;
+    }
+    #img01 {
+        width: 200px;
+    }
+    .layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+    }
+    .container {
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 400px;
+        z-index: auto;
+    }
+</style>
+
+<h1>사진 보기</h1>
+<p>
+    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Id numquam accusantium officiis ex veniam perferendis, odio exercitationem itaque! Harum libero perferendis iure dolor officia autem quas architecto et aperiam sunt?
+</p>
+
+<img id="img01" src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+
+<div id="layer" class="layer"></div>
+
+<div id="container" class="container">
+    <img id="modal-img" src="" alt="">
+</div>
+
+<script>
+    document.getElementById('img01').addEventListener('click', function (e) {
+        document.getElementById('modal-img').src = e.target.src;
+        document.getElementById('container').style.display = 'block';
+        document.getElementById('layer').style.display = 'block';
+    })
+</script> -->
+
+<!-- <style>
+    img {
+        width: 200px;
+    }
+    .modal-img {
+        width: 100%;
+        height: 100%;
+    }
+    .layer {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.5);
+        display: none;
+    }
+    .container {
+        display: none;
+        position: fixed;
+        top: 100px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, 0.5);
+        width: 400px;
+        height: 400px;
+        z-index: auto;
+    }
+</style>
+
+<img class="img01" src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+<img class="img01" src="../project/포트폴리오/사진/youtube 2.PNG" alt="">
+<img class="img01" src="../project/포트폴리오/사진/youtube 3.PNG" alt="">
+
+<div id="layer" class="layer"></div>
+
+<div id="container" class="container">
+    <img id="modal-img" class="modal-img" src="" alt="">
+</div> -->
+
+<!-- 내가 했던 방식 -->
+<!-- <script>
+    var layer = document.getElementById('layer')
+
+        document.getElementById('img01').addEventListener('click', function (e) {
+        document.getElementById('modal-img').src = e.target.src;
+        document.getElementById('container').style.display = 'block';
+        document.getElementById('layer').style.display = 'block';
+    })
+        document.getElementById('img02').addEventListener('click', function (e) {
+        document.getElementById('modal-img').src = e.target.src;
+        document.getElementById('container').style.display = 'block';
+        document.getElementById('layer').style.display = 'block';
+    })
+        document.getElementById('img03').addEventListener('click', function (e) {
+        document.getElementById('modal-img').src = e.target.src;
+        document.getElementById('container').style.display = 'block';
+        document.getElementById('layer').style.display = 'block';
+    })
+        layer.addEventListener('click', function () {
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('layer').style.display = 'none';    
+    })
+</script> -->
+
+<!-- 강사쌤이 만든 방법 -->
+<!-- <script>
+    var img01s = document.querySelectorAll('.img01');
+    var modalImg = document.getElementById('modal-img');
+    var container = document.getElementById('container');
+    var layer = document.getElementById('layer');
+
+    img01s.forEach(function (img01) {
+        img01.addEventListener('click', function () {
+            modalImg.src = img01.src;
+            container.style.display = 'block';
+            layer.style.display = 'block';
+        })
+    })
+    layer.addEventListener('click', function () {
+        document.getElementById('container').style.display = 'none';
+        document.getElementById('layer').style.display = 'none';    
+    })
+</script> -->
+
+<!-- <style>
+    .thumbnail {
+        width: 100px;
+        height: 100px;
+        object-fit: cover;
+        opacity: 0.8;
+        cursor: pointer;
+    }
+    .thumbnail:hover {
+        opacity: 1;
+    }
+    .container img {
+        width: 400px;
+        height: 300px;
+        object-fit: cover;
+    }
+    .thumbnail-container {
+        font-size: 0;
+    }
+</style>
+
+<div class="container">
+    <img id="display-image" src="" alt="">
+</div>
+<div class="thumdnail-container">
+    <img class="thumbnail" src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+    <img class="thumbnail" src="../project/포트폴리오/사진/youtube 2.PNG" alt="">
+    <img class="thumbnail" src="../project/포트폴리오/사진/youtube 3.PNG" alt="">
+    <img class="thumbnail" src="../project/포트폴리오/사진/youtube 4.PNG" alt="">
+</div>
+
+<script>
+    // NodeList
+    // Array와 비슷한 속성을 가지고 있다 (index, length 등)
+    var thumbnails = document.querySelectorAll('.thumbnail');
+    var displayImage = document.getElementById('display-image');
+
+    // 썸네일을 클릭했을 때
+    thumbnails.forEach(function (thumbnail) {
+        thumbnail.addEventListener('click', function () {
+
+            // getAttribute('src')
+           displayImage.src = thumbnail.src;
+        })
+    })
+    // 처음 페이지가 load되었을 때
+    displayImage.src = thumbnails[0].src
+</script> -->
+
+<!-- <style>
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+</style>
+
+<div class="container">
+    <img src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 2.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 3.PNG" alt="">
+</div>
+<div class="nav">
+    <button id="prev" class="prev" onclick="navigateTo(-1)">prev</button>
+    <button id="next" class="next" onclick="navigateTo(1)">next</button>
+</div>
+
+<script>
+    var imgs = document.querySelectorAll('img')
+    var index = 0;
+
+    function navigateTo(data) {
+
+        // index = index + data;
+        index += data;
+        
+        // 첫번째 이미지에서 prev을 누를 경우
+        if (index === -1) {
+            // 마지막 이미지의 index
+            index = imgs.length-1
+        }
+
+        // 마지막 이미지에서 next를 누르는 경우
+        if (index === imgs.length) {
+            index = 0
+        }
+        
+        console.log(index);
+
+        // 모든 이미지를 안보이게 한다
+        imgs.forEach(function (img) {
+            img.style.display = 'none';
+        })
+        // index에 해당하는 이미지만 보이게 한다
+        imgs[index].style.display = 'block';
+    }
+
+    
+
+    // 페이지가 처음 로드외었을 때
+    navigateTo(index);
+</script> -->
+
+<!-- <style>
+    img {
+        width: 300px;
+        height: 300px;
+        object-fit: cover;
+    }
+</style>
+
+<div class="container">
+    <img src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 2.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 3.PNG" alt="">
+</div>
+
+<script>
+    var imgs = document.querySelectorAll('img')
+    var index = -1;
+
+    function navigateTo() {
+
+        index++;
+
+        if (index === imgs.length) {
+            index = 0;
+        }
+
+        // 모든 이미지를 안보이게 한다
+        imgs.forEach(function (img) {
+            img.style.display = 'none';
+        })
+        // index에 해당하는 이미지만 보이게 한다
+        imgs[index].style.display = 'block'
+    }
+
+    // 처음 페이지가 load되었을 때
+    navigateTo();
+
+    // 3초 뒤부터 시작(3초 간견으로 callback 실행)
+    setInterval(navigateTo, 1000)
+</script> -->
+
+<style>
+    .container {
+        border: 3px dashed;
+        width: 300px;
+        height: 300px;
+        overflow: hidden;
+        white-space: nowrap;
+        font-size: 0;
+    }
+    img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: inline-block;
+        transition: .5s;
+    }
+</style>
+
+<div class="container">
+    <img src="../project/포트폴리오/사진/youtube 1.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 2.PNG" alt="">
+    <img src="../project/포트폴리오/사진/youtube 3.PNG" alt="">
+</div>
+<div class="nav">
+    <button id="prev" onclick="navigateTo(-1)">prev</button>
+    <button id="next" onclick="navigateTo(1)">next</button>
+</div>
+
+<script>
+    var imgs = document.querySelectorAll('img')
+    var prev = document.getElementById('prev');
+    var next = document.getElementById('next');
+    index = 0;
+
+    function navigateTo(data) {
+
+        index -= data;
+        
+        console.log(index)
+
+        if (index === 0) {
+            prev.style.display = 'none';
+        } else {
+            prev.style.display = 'inline-block';
+        }
+        
+        if (index === -2) {
+            next.style.display = 'none';
+        } else {
+            next.style.display = 'inline-block';
+        }
+
+        imgs[0].style.marginLeft = (index * 300) + 'px'
+    }
+    prev.style.display = 'none';
+        
+</script>
+
+
+</body>
+</html>

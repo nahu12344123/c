@@ -1,0 +1,177 @@
+<!-- <style>
+    * {
+        box-sizing: border-box;
+        padding: 0%;
+    }
+    .en {
+        float: left;
+        width: 31%;
+    }
+    .content::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    ul li {
+        list-style-type: none;
+        margin: 0px 0px 10px 0px;
+        background-color: #33b5e5;
+        color: #fff;
+    }
+    .min {
+        background-color: blueviolet;
+        padding: 30px;
+        color: #fff;
+    }
+    .content ul li {
+        padding: 10px;
+    }
+    .lome {
+        margin: 0px 30px;
+    }
+    .q-a {
+        background-color: #33b5e5;
+        color: #fff;
+        text-align: center;
+    }
+    li:hover {
+        background-color: aqua;
+    }
+    @media (min-width: 501px) {
+        
+    }
+    @media (min-width: 900px) {
+
+    }
+    .a {top: 130px;}
+    .b {top: 183px;}
+</style>
+
+<h1 class="min">자동차</h1>
+
+<div class="content">
+    <div class="en">
+        <ul>
+            <li>현대</li>
+            <li>아우디</li>
+            <li>페라리</li>
+            <li>포르쉐</li>
+        </ul>
+    </div>
+    <div class="lome en">
+        <h1>현대</h1>
+        <br>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+             Molestiae ullam beatae necessitatibus qui vero nisi tempore dolor rem hic nobis error,
+              asperiores voluptates ut odio incidunt culpa facere officiis perspiciatis!</p>
+    </div>
+    <div class="q-a en">
+        <h2>연비?</h2>
+        <p>나쁘지 안다</p>
+        <h2>가격</h2>
+        <p>착하다</p>
+        <h2>속도</h2>
+        <p>무넨무넨 하다</p>
+    </div>
+</div> -->
+
+<script src="https://kit.fontawesome.com/4dd4548a89.js" crossorigin="anonymous"></script>
+
+<style>
+    * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+    body {
+        margin: 50px;
+    }
+    img {
+        width: 100%;
+        height: 450px;
+        border-radius: 20px;
+    }
+    h2 {
+        padding: 5px;
+    }
+    .container::after {
+    content: "";
+    display: block;
+    clear: both;
+    }
+    .float {
+        float: left;
+        width: 100%;
+        padding: 10px;
+    }
+    .relative {
+        position: relative;
+    }
+    .absolute {
+        position: absolute;
+    }
+    .text {
+        color: #fff;
+        font-size: 30px;
+        transform: translate(-50%, -50%);
+    }
+    .fa-brands {
+        border: 1px solid #fff;
+        border-radius: 50%;
+        padding: 4px;
+        background-color: purple;
+        position: absolute;
+        font-size: 15px;
+        color: #fff;
+        bottom: 40px;
+        left: 40px;
+    }
+    .ifon {
+        bottom: 40px;
+        right: 40px;
+    }
+    .fa-regular {
+        padding: 2px;
+        color: #fff;
+    }
+    @media (min-width: 900px) {
+        .min-height {
+            width: 33.333333%;
+        }
+    }
+</style>
+
+<h2>Custom cards</h2>
+<hr>
+<br><br><br>
+<div class="container">
+    <div class="float relative min-height">
+        <img src="../project/프로젝트2/house2.jpeg" alt="">
+        <span class="absolute text" style="top: 50%; left: 50%;">short title, long jacket</span>
+        <i class="fa-brands fa-bitcoin"></i>
+        <div class="absolute ifon">
+            <i class="fa-regular fa-lightbulb"><samp style="margin: 0 0 0 5px;">Earth</samp></i>
+            <i class="fa-regular fa-calendar-days"><samp style="margin: 0 0 0 5px;">3d</samp></i>
+        </div>
+    </div>
+    <div class="float relative min-height">
+        <img src="../project/프로젝트2/house3.jpeg" alt="">
+        <span class="absolute text" style="top: 50%; left: 50%;">Much longer title that wraps to multiple lines</span>
+        <i class="fa-brands fa-bitcoin"></i>
+        <div class="absolute ifon">
+            <i class="fa-regular fa-lightbulb"><samp style="margin: 0 0 0 5px;">Pakjstan</samp></i>
+            <i class="fa-regular fa-calendar-days"><samp style="margin: 0 0 0 5px;">4d</samp></i>
+        </div>
+    </div>
+    <div class="float relative min-height">
+        <img src="../project/프로젝트2/house4.jpeg" alt="">
+        <span class="absolute text" style="top: 50%; left: 50%;">Another longer title belongs here</span>
+        <i class="fa-brands fa-bitcoin"></i>
+        <div class="absolute ifon">
+            <i class="fa-regular fa-lightbulb"><samp style="margin: 0 0 0 5px;">California</samp></i>
+            <i class="fa-regular fa-calendar-days"><samp style="margin: 0 0 0 5px;">5d</samp></i>
+        </div>
+    </div>
+
+</div>
+

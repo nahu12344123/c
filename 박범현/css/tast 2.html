@@ -1,0 +1,82 @@
+<!-- 
+<style>
+    .container {
+        margin: 10px 0;
+        background-color: #ddd;
+    }
+    .skills {
+        padding: 10px 0;
+        text-align: right;
+        color: #fff;
+    }
+    .html {
+        width: 90%;
+        background-color: #04aa6d;
+    }
+    .css {
+        width: 80%;
+        background-color: #2196f3;
+    }
+    .js {
+        width: 70%;
+        background-color: #f44336;
+    }
+    .php {
+        width: 60%;
+        background-color: #808080;
+    }
+</style>
+
+<h1>Grapn</h1>
+
+<div class="container">
+    <div class="skills html">html</div>
+</div>
+<div class="container">
+    <div class="skills css">css</div>
+</div>
+<div class="container">
+    <div class="skills js">javaScript</div>
+</div>
+<div class="container">
+    <div class="skills php">php</div>
+</div> -->
+
+<script src="https://kit.fontawesome.com/4dd4548a89.js" crossorigin="anonymous"></script>
+
+<style>
+    .fa-regular {
+        float: left;
+        width: 33.3333%;
+    }
+    .container::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    .container {
+        border: 1px dashed;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        font-size: 50px;
+        text-align: center;
+    }
+    .fa-solid {
+        top: -10px;
+        right: 180px;
+        font-size: 20px;
+        color: red;
+        position: absolute;
+    }
+</style>
+
+<nav class="container">
+    <span><i class="fa-regular fa-id-badge"></i>
+        <span><i class="fa-solid fa-location-pin"></i></span>
+    </span>
+    <span><i class="fa-regular fa-lightbulb"></i></span>
+    <span><i class="fa-regular fa-clock"></i></span>
+</nav>

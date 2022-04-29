@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Poppins&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/4dd4548a89.js" crossorigin="anonymous"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background-color: gray;
+            border-radius: 4px;
+        }
+        .mmm::-webkit-scrollbar-thumb {
+            display: none;
+        }
+        .mmm::-webkit-scrollbar-thumb:hover {
+            display: block;
+        }
+        .www::-webkit-scrollbar-thumb:hover {
+            background-color: gainsboro;
+        }
+        .img {
+            box-sizing: border-box;
+            width: 25%;
+            padding: 10px;
+        }
+        .nav {
+            box-sizing: border-box;
+            display: flex;
+            justify-content: space-between;
+            background-color: rgba(255, 255, 255, 0.98);
+            padding: 10px;
+        }
+        hr {
+            position: fixed;
+            width: 100%;
+        }
+        .input {
+            padding: 12px;
+            width: 500px;
+        }
+        .but {
+            padding: 12px;
+            width: 60px;
+            margin: 0 0 0 -6px;
+        }
+        .float-left {
+            float: left;
+        }
+        .float-rignt {
+            float: right;
+        }
+        .float-container::after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        .fixed-top {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+        }
+        .borderr {
+            border: 1px solid #ddd;
+        }
+        .fa-light {
+            font-size: 100px;
+        }
+        .but:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .fa-user {
+            border: 1px solid blue;
+            color: blue;
+            padding: 12px;
+            width: 80px;
+            text-align: center;
+            top: 0;
+            right: 0;
+            margin: 0 30px 0 0;
+            cursor: pointer;
+        }
+        .fa-bars {
+            top: 0;
+            left: 0;
+        }
+        .fa-microphone {
+            border-radius: 50%;
+            font-size: 20px;
+            background-color: #0000000D;
+            width: 20px;
+            padding: 10px;
+            text-align: center;
+            margin: 0 0 0 10px;
+            cursor: pointer;
+        }
+        .Menu {
+            width: 250px;
+            height: 100%;
+            /* border: 1px dashed; */
+            background-color: #fff;
+            top: 62px;
+            left: 0;
+        }
+        .absolute {
+            position: absolute;
+        }
+        .relative {
+            position: relative;
+        }
+        .me {
+            padding: 15px;
+            margin: 0 0 0 20px;
+        }
+        .mu {
+            padding: 10px;
+            margin: 0 0 0 15px;
+        }
+        .border {
+            border-top: 1px solid #ddd;
+            border-bottom: 1px solid #ddd;
+            border-left: none;
+            border-right: none;
+        }
+        .box {
+            box-sizing: border-box;
+        }
+        .bar {
+            width: 100%;
+            top: 57px;
+            left: 250px;
+        }
+        .bar-First {
+            background-color: black;
+            border-radius: 20px;
+            color: #fff;
+            padding: 10px 15px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .bar-all {
+            border: 1px solid #ddd;
+            background-color: #0000000D;
+            border-radius: 20px;
+            padding: 10px 15px;
+            margin: 10px 10px 10px 0;
+        }
+        .manu-rignt {
+            background-color: rgba(255, 255, 255, 0.98);
+            width: 220px;
+            top: 48px;
+            right: 0;
+            border-top: none;
+            border-bottom: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            display: none;
+        }
+        .manu-rignt-two {
+            background-color: rgba(255, 255, 255, 0.98);
+            width: 300px;
+            top: 48px;
+            right: 150px;
+            border-top: none;
+            border-bottom: 1px solid #ddd;
+            border-left: 1px solid #ddd;
+            border-right: 1px solid #ddd;
+            display: none;
+        }
+        .ba {
+            top: 150px;
+            left: 250px;
+            width: 1630px;
+        }
+        .text {
+            background-color: black;
+            color: #fff;
+            bottom: 42px;
+            right: 15px;
+            padding: 3px;
+            border-radius: 3px;
+            display: none;
+        }
+        .ho {
+            background-color: #fff;
+            top: -10px;
+            left: -10px;
+            width: 400px;
+            height: 320px;
+            transition: all 0.5s linear 1.5s;
+            opacity: 0;
+        }
+        .but-First{
+            text-align: center;
+            box-sizing: border-box;
+            padding: 10px;
+            margin: 0 10px;
+            background-color: #0000000D;
+            display: inline-block;
+            width: 44%;
+            cursor: pointer;
+        }
+        .con:hover .ho {
+            opacity: 1;
+        }
+        .con:hover .text {
+            display: block;
+        }
+        .mave {
+            cursor: pointer;
+        }
+        .hover:hover {
+            background-color: #ddd;
+            cursor: pointer;
+        }
+        .mave:hover .manu-rignt {
+            display: block;
+        }
+        .mave:hover .manu-rignt-two {
+            display: block;
+        }
+    </style>
+</head>
+<body style="background-color: #0000000D; overflow: auto;" class="relative www">
+    <div class="fixed-top float-container" style="z-index: 6;">
+            <div class="nav">
+                <div>
+                    <i class="fa-solid fa-bars" style="font-size: 20px; margin: 0 20px;"></i>
+                    <i class="fa-brands fa-youtube" style="font-size: 30px; color: red;"></i> <samp style="font-size: 30px;">Youtube</samp>
+                </div>
+                
+                <form action="" class="float-container" style="display: inline-block; ">
+                    <input type="text" class="input borderr float-left" placeholder="검색">
+                    <button class="but borderr float-left"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    <i class="fa-solid fa-microphone"></i>
+                </form>
+                
+                <samp class="float-container bu">
+                    <i class="fa-solid fa-user float-rignt">로그인</i>
+                </samp>
+            </div>
+        </div>
+    <div class="float-container" style="z-index: 9;">
+        <div class="float-left relative">
+            <div class=" Menu absolute mmm" style="position: fixed; overflow: auto;">
+                <div style="padding: 10px 0;">
+                    <div class="hover"><i class="fa-solid fa-house me"></i>홈</div>
+                    <div class="hover"><i class="fa-regular fa-compass me"></i>탐색</div>
+                    <div class="hover"><i class="fa-solid fa-play me"></i>Shorts</div>
+                    <div class="hover"><i class="fa-solid fa-tv me"></i></i>구독</div>
+                </div>
+
+                <div style="padding: 10px 0;" class="border">
+                    <div class="hover"><i class="fa-regular fa-circle-play me"></i>보관함</div>
+                    <div class="hover"><i class="fa-solid fa-clock-rotate-left me"></i>시청 기록</div>
+                </div>
+
+                <div style="padding: 10px 0">
+                    <p class="box" style="padding: 0 20px; font-size: 15px;">로그인하면 동영상에 좋아요 를 표시하고 댓글을 달거나 구독할 수 있습니다</p>
+                    <samp class="bu" style="padding: 0 0 0 20px;">
+                        <i class="fa-solid fa-user">로그인</i>
+                    </samp>
+                </div>
+
+                <div class="border" style="padding: 10px 0;">
+                    <p style="padding: 0 20px;">인기 YOUTUBE</p>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>음악</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>스포츠</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>게임</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>영화</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>뉴스</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>실시간</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>학습</div>
+                    <div class="hover"><i class="fa-solid fa-circle-play me"></i>360 동영상</div>
+                </div>
+
+                <div style="padding: 10px 0;">
+                    <div><i class="fa-solid fa-plus me"></i>채널 탐색</div>
+                </div>
+
+                <div class="border" style="padding: 10px 0;">
+                    <p style="padding: 0 20px;">YOUTUBE 더보기</p>
+                    <div class="hover"><i class="fa-brands fa-youtube me"></i>YouTube Premium</div>
+                    <div class="hover"><i class="fa-solid fa-wifi me"></i>실시간</div>
+                </div>
+
+                <div style="padding: 10px 0;">
+                    <div class="hover"><i class="fa-solid fa-gear me"></i>설정</div>
+                    <div class="hover"><i class="fa-regular fa-flag me"></i>신고 기록</div>
+                    <div class="hover"><i class="fa-solid fa-question me"></i>고객센터</div>
+                    <div class="hover"><i class="fa-solid fa-exclamation me"></i>의견 보내기</div>
+                </div>
+
+                <div class="border" style="padding: 10px 0;">
+                    <p style="padding: 0 20px 50px 20px;">2022 it아카데미 박범현 포트폴리오</p>
+                </div>
+            </div>
+
+            <div class="bar border" style="position: fixed; z-index: 7;">
+                <div style="height: 60px; background-color: rgba(255, 255, 255, 0.98);">
+                    <div style="display: flex; justify-content: center;">
+                        <samp class="bar-First">전체</samp>
+                        <samp class="bar-all hover">음악</samp>
+                        <samp class="bar-all hover">플랫폼 게임</samp>
+                        <samp class="bar-all hover">믹스</samp>
+                        <samp class="bar-all hover">만화 영화</samp>
+                        <samp class="bar-all hover">공예</samp>
+                        <samp class="bar-all hover">실시간</samp>
+                        <samp class="bar-all hover">랩</samp>
+                        <samp class="bar-all hover">축구</samp>
+                        <samp class="bar-all hover">앤션 어드벤처 게임</samp>
+                        <samp class="bar-all hover">요리</samp>
+                        <samp class="bar-all hover">반려동물</samp>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <i class="fa-solid fa-ellipsis mave" style="font-size: 20px; position: fixed; right: 190px; top: 8px; padding: 10px; z-index: 8;">
+        <div class="manu-rignt absolute" style="position: fixed; z-index: 5;">
+            <div class="hover" style="margin: 5px 0;"><i class="fa-brands fa-youtube mu" style="color: red;"></i><samp style="font-size: 14px;">YouTube TV</samp></div>
+    
+            <div class="border">
+                <div class="hover" style="margin: 5px 0;"><i class="fa-brands fa-youtube mu" style="color: red;"></i><samp style="font-size: 14px;">YouTube Music</samp></div>
+                <div class="hover" style="margin: 5px 0;"><i class="fa-brands fa-youtube mu" style="color: red;"></i><samp style="font-size: 14px;">YouTube Kids</samp></div>
+            </div>
+    
+            <div class="hover" style="margin: 5px 0;"><i class="fa-brands fa-youtube mu" style="color: red;"></i><samp style="font-size: 14px;">YouTube for Artists</samp></div>
+        </div>
+    </i>
+    <i class="fa-solid fa-ellipsis-vertical mave" style="font-size: 20px; position: fixed; right: 155px; top: 9px; padding: 10px; z-index: 9;">
+        <div class="absolute manu-rignt-two"  style="position: fixed; z-index: 4;">
+            <div class="hover"><i class="fa-regular fa-moon me"></i><samp>디자인: 기기 테마</samp></div>
+            <div class="hover"><i class="fa-solid fa-language me"></i><samp>언어: 한국어</samp></div>
+            <div class="hover"><i class="fa-solid fa-globe me"></i><samp>위치: 한국</samp></div>
+            <div class="hover"><i class="fa-solid fa-gear me"></i><samp>설정</samp></div>
+            <div class="hover"><i class="fa-solid fa-shield me"></i><samp>내 데이터</samp></div>
+            <div class="hover"><i class="fa-solid fa-question me"></i><samp>고객센터</samp></div>
+            <div class="hover"><i class="fa-solid fa-exclamation me"></i><samp>의견 보내기</samp></div>
+            <div class="hover"><i class="fa-solid fa-keyboard me"></i><samp>단축키</samp></div>
+        </div>
+    </i>
+
+    <div class="absolute ba img" style="display: flex; justify-content: center; z-index: 5;">
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute ba img" style="display: flex; justify-content: center; top: 420px; z-index: 4;">
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 5.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">잠자면서 듣기 좋은 노래모음</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 5.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">잠자면서 듣기 좋은 노래모음</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 6.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">원피스 다시보기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 6.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">원피스 다시보기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 7.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">아케인 노래모음</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 7.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">아케인 노래모음</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 8.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">싸음독학 ost 1시간 듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 8.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">싸음독학 ost 1시간 듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute ba img" style="display: flex; justify-content: center; top: 700px; z-index: 3;">
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+    </div>
+
+    <div class="absolute ba img" style="display: flex; justify-content: center; top: 980px; z-index: 2;">
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 5.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">잠자면서 듣기 좋은 노래모음</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 5.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">잠자면서 듣기 좋은 노래모음</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 6.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">원피스 다시보기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 6.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">원피스 다시보기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 7.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">아케인 노래모음</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 7.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">아케인 노래모음</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 8.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">싸음독학 ost 1시간 듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 8.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">싸음독학 ost 1시간 듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+    </div>
+
+        <div class="absolute ba img" style="display: flex; justify-content: center; top: 1250px; z-index: 1;">
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 1.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">롤토체스 타격대 시비르덱 공략</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 2.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">임창정 별거 없던 그 하루로 1시간 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 3.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">10cm 인기곡 top100 연속듣기</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+
+        <div class="relative con">
+            <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="padding: 10px;">
+            <samp class="absolute text">계속 마우스를 오버하여 재생하기</samp>
+            <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+            <div class="absolute ho">
+                <img src="../포트폴리오/사진/youtube 4.PNG" alt="" style="width: 100%;">
+                <div style="padding: 0 0 0 10px;">월드 오브 워쉽 리뷰</div>
+                <br>
+                <samp class="but-First"><i class="fa-regular fa-clock"></i>나중에 볼 동영상</samp>
+                <samp class="but-First"><i class="fa-solid fa-list"></i>목록에 추가</samp>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./layout.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@300&family=Poppins&display=swap" rel="stylesheet">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+        .bg-black {
+            background-color: #000;
+            color: #fff;
+        }
+        .bg-light-grey {
+            background-color: #ddd;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: #000
+        }
+        .bg-image {
+            background-image: url('../img/project1.PNG')
+        }
+        .bg-text {
+            font-size: 80px;
+            color: #fff
+        }
+        .left-text {
+            left: 20px;
+            bottom: 15px;
+        }
+        .right-text {
+            right: 20px;
+            bottom: 15px;
+            color: #fff;
+        }
+        .padding-48 {
+            padding: 48px 0;
+        }
+    </style>
+</head>
+<body>
+    <nav class="float-container fixed-top padding-8 bg-black">
+        <a class="left width-25 text-center padding-8 bg-black" href="#">홈</a>
+        <a class="left width-25 text-center padding-8 bg-black" href="#about">소개</a>
+        <a class="left width-25 text-center padding-8 bg-black" href="#menu">메뉴</a>
+        <a class="left width-25 text-center padding-8 bg-black" href="#where">위치</a>
+    </nav>
+
+    <div class="bg-image">
+        <h1 class="bg-text text-center">the<br>cafe</h1>
+        <span class="left-text bg-black absolute hide-mobile">영업시간 오전9시 - 오후6시</span>
+        <span class="right-text absolute ">인천 부평구 코리아IT아카데미</span>
+    </div>
+
+    <h3 id="about" class="text-center padding-48">
+        <span class="bg-black">카페 소개</span>
+    </h3>
+
+    <div class="about" style="max-width: 700px; margin: auto; padding: 0 15px;">
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Porro quae tenetur esse. Neque non dolor vero assumenda repellendus quam in at aliquam temporibus nesciunt quod omnis, commodi voluptate repudiandae quas!</p>
+        <br>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Culpa, aut nihil impedit ex odit ea rem cumque eveniet voluptatem, ipsum iste illum qui officiis distinctio molestias. Laudantium nihil atque consequuntur.</p>
+        <br>
+        <div class="bg-light-grey padding-8" style="border-left: 5px solid #888;">
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quam possimus sint sed veritatis quidem, consectetur eaque accusantium neque dolorem, necessitatibus optio labore excepturi laboriosam, incidunt saepe cum molestiae? Laudantium, accusamus?</p>
+            <br>
+            <p>카페 사장</p>
+        </div>
+        <br>
+        <img src="../img/project2.PNG" alt="">
+        <br>
+        <p><b>영업시간</b> 오전 9시 - 오후6시</p>
+        <br>
+        <p><b>위치</b> 인천광역시 부평구 코리아IT아카데미</p>
+    </div>
+
+    <h3 id="menu" class="text-center padding-48">
+        <span class="bg-black">메뉴</span>
+    </h3>
+
+    <div class="menu" style="max-width: 700px; margin: auto; padding: 0 15px;">
+        <!-- 메뉴판 -->
+        <div class="box-shadow float-container padding-8">
+            <a href="" class="left width-50 text-center">Eat</a>
+            <a href="" class="left width-50 text-center">Drink</a>
+        </div>
+        <div class="box-shadow" style="padding: 48px 16px;">
+            <h3>Bread Basket</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laboriosam pariatur suscipit </p>
+            <br>
+            <h3>Bread Basket</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laboriosam pariatur suscipit </p>
+            <br>
+            <h3>Bread Basket</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laboriosam pariatur suscipit </p>
+            <br>
+            <h3>Bread Basket</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laboriosam pariatur suscipit </p>
+            <br>
+            <h3>Bread Basket</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Amet laboriosam pariatur suscipit </p>
+            <br>
+        </div>
+        <br>
+        <!-- 메뉴사진 -->
+        <img src="../img/project3.PNG" alt="">
+    </div>
+
+    <h3 id="where" class="text-center padding-48">
+        <span class="bg-black">위치</span>
+    </h3>
+
+<div class="where" style="max-width: 700px; margin: auto; padding: 0 15px;">
+    <p>Lorem ipsum dolor sit amet consectetur</p>
+    <img src="../img/project4.PNG" alt="">
+
+    <p><span class="bg-black">FYI!</span> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Inventore earum vero corporis saepe incidunt et id nesciunt quos commodi eum dolore voluptatum delectus eos iure ut pariatur perspiciatis, nemo minima?</p>
+    <p><b>Reserve</b> Lorem ipsum dolor sit amet consectetur</p>
+
+    <form action="">
+        <p>
+            <input type="text" class="width-100" placeholder="성함">
+        </p>
+        <p>
+            <input type="text" class="width-100" placeholder="인원">
+        </p>
+        <p>
+            <input type="date" class="width-100" placeholder="">
+        </p>
+        <p>
+            <input type="text" class="width-100" placeholder="메시지">
+        </p>
+        <p><button class="btn bg-black">예약하기</button></p>
+    </form>
+</div>
+
+<br>
+
+<footer class="bg-light-grey padding-48">
+    <p class="text-center">2022 카페</p>
+</footer>
+</body>
+</html>
